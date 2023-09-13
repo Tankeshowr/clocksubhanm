@@ -1,0 +1,171 @@
+@import url("https://fonts.googleapis.com/css2?family=Gluten:wght@200&family=Poppins:wght@300;400&family=Ubuntu:wght@300&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #1f293d;
+}
+
+.login-form {
+  position: absolute;
+  width: 400px;
+}
+
+.login-form form {
+  width: 100%;
+  padding: 0 50px;
+}
+
+h2 {
+  color: #0ef;
+  font-size: 2em;
+  text-align: center;
+}
+
+.input-box {
+  position: relative;
+  margin: 25px;
+}
+
+.input-box input {
+  width: 100%;
+  background: transparent;
+  height: 50px;
+  outline: none;
+  border: 2px solid #2c4766;
+  border-radius: 40px;
+  font-size: 1em;
+  color: white;
+  padding: 0 25px;
+  transition: 0.5 ease;
+}
+
+.input-box input:focus,
+.input-box input:focus {
+  border-color: #0ef;
+}
+
+.input-box label {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+  color: white;
+  pointer-events: none;
+  transition: 0.5 ease;
+  font-size: 1em;
+}
+
+.input-box input:focus ~ label,
+.input-box input:valid ~ label {
+  top: 1px;
+  font-size: 0.8em;
+  background: #1f293d;
+  color: #0ef;
+  padding: 0 6px;
+}
+
+.btn {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  padding: 10px 20px;
+  font-size: 1.5em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-radius: 30px;
+  color: #0ef;
+  background: #1f293d;
+  border: 2px solid #0ef;
+  z-index: 1;
+  overflow: hidden;
+  transform: color 1s, box-shadow 1px;
+}
+.btn:hover {
+  transition-delay: 0s, 1s;
+  color: #fff;
+  box-shadow: 0px 0px 10px #0ef, 0px 0px 20px #0ef, 0px 0px 40px #0ef,
+    0px 0px 80px #0ef, 0px 0px 160px #0ef;
+}
+.btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -50px;
+  width: 0;
+  height: 100%;
+  background: #0ef;
+  transform: skewX(35deg);
+  z-index: -1;
+  transition: 1s;
+}
+
+.btn:hover:before {
+  width: 100%;
+}
+
+.forget-link {
+  margin: 35px 0;
+  text-align: center;
+}
+
+.forget-link a {
+  text-decoration: none;
+  color: #0ef;
+  font-size: 1.2em;
+}
+
+.forget-link a:hover {
+  text-decoration: underline;
+}
+
+.signup-link {
+  margin: 20px;
+  text-align: center;
+}
+
+.signup-link a {
+  text-decoration: none;
+  color: #0ef;
+  text-align: 1.2em;
+}
+
+.container {
+  position: relative;
+  width: 256px;
+  height: 256px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container span {
+  position: absolute;
+  left: 0;
+  width: 32px;
+  height: 6px;
+  background: #2c4766;
+  border-radius: 8px;
+  transform-origin: 128px;
+  transform: scale(2.2) rotate(calc(var(--i) * 360deg / 50));
+  animation: animate 3s linear infinite;
+  animation-delay: calc(var(--i) * (3s / 50));
+}
+
+@keyframes animate {
+  0% {
+    background: #0ef;
+  }
+  25% {
+    background: #2c4766;
+  }
+}
